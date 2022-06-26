@@ -56,6 +56,25 @@ function hoursWorkedOnDate(obj, dt) {
 function wagesEarnedOnDate(obj, dt) {
     let c = Math.floor(hoursWorkedOnDate(obj, dt) * obj.payPerHour);
     return c;
+}
+
+//Added allWagesFor function
+function allWagesFor(obj) {
+   let dates = obj.timeInEvents;
+   let total = 0;
+   dates.forEach(d=>{
+    total += wagesEarnedOnDate(obj, d.date);
+   })
+   return total;
+}
+
+//Added findEmployeeByFirstName function
+function findEmployeeByFirstName(arr, name) {
+    let f = arr.find(a=>a.firstName === name)
+    if(f) return f;
+    return undefined;
+}
+
 
 
 
