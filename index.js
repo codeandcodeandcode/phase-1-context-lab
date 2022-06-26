@@ -33,6 +33,18 @@ function createTimeInEvent(obj, dt) {
     return obj;
 }
 
+//Added createTimeOutEvent function
+function createTimeOutEvent(obj, dt) {
+    let d = dt.split(" ");
+    let to = {
+        type: "TimeOut",
+        hour: d[1],
+        date: d[0],
+    }
+    obj.timeOutEvents.push(to)
+    return obj;
+}
+
 
 
 
