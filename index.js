@@ -52,6 +52,11 @@ function hoursWorkedOnDate(obj, dt) {
     return (b.hour - a.hour) / 100;
 }
 
+//Added wagesEarnedOnDate function
+function wagesEarnedOnDate(obj, dt) {
+    let c = Math.floor(hoursWorkedOnDate(obj, dt) * obj.payPerHour);
+    return c;
+
 
 
 
