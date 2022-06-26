@@ -36,4 +36,8 @@ const allWagesFor = function () {
 
     return payable
 }
+function wagesEarnedOnDate(obj, dt) {
+    let c = Math.floor(hoursWorkedOnDate(obj, dt) * obj.payPerHour);
+    return c;
+}
 
