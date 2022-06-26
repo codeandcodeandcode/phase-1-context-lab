@@ -21,6 +21,18 @@ function createEmployeeRecords(arr) {
     return lgArr;
 }
 
+// Added createTimeInEvent function 
+function createTimeInEvent(obj, dt) {
+    let d = dt.split(" ");
+    let to = {
+        type: "TimeIn",
+        hour: d[1],
+        date: d[0],
+    }
+    obj.timeInEvents.push(to)
+    return obj;
+}
+
 
 
 
