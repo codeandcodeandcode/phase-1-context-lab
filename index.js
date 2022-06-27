@@ -1,4 +1,3 @@
-/* Your Code Here */
 // Added createEmployeeRecord function
 function createEmployeeRecord(arr) {
     return {
@@ -22,24 +21,22 @@ function createEmployeeRecords(arr) {
 }
 
 // Added createTimeInEvent function 
-function createTimeInEvent(obj, dt) {
-    let d = dt.split(" ");
+function createTimeInEvent(obj, da) {
     let to = {
         type: "TimeIn",
-        hour: d[1],
-        date: d[0],
+        hour: da.split(' ')[1],
+        date:  da.split(' ')[0],
     }
     obj.timeInEvents.push(to)
     return obj;
 }
 
 //Added createTimeOutEvent function
-function createTimeOutEvent(obj, dt) {
-    let d = dt.split(" ");
+function createTimeOutEvent(obj, da) {
     let to = {
         type: "TimeOut",
-        hour: d[1],
-        date: d[0],
+        hour: da.split(' ')[1],
+        date:  da.split(' ')[0],
     }
     obj.timeOutEvents.push(to)
     return obj;
@@ -74,6 +71,19 @@ function calculatePayroll(arr) {
     return s;
 }
 
+
+let bpRecord = createEmployeeRecord(["Byron", "Poodle", "Mascot", 3])
+        let updatedBpRecord = createTimeInEvent(bpRecord, "2014-02-28 1400")
+        let newEvent = updatedBpRecord.timeInEvents[0]
+        console.log(newEvent.type);
+
+
+
+
+
+
+
+
 /*
  We're giving you this function. Take a look at it, you might see some usage
  that's new and different. That's because we're avoiding a well-known, but
@@ -95,9 +105,10 @@ const allWagesFor = function () {
     return payable
 }
 
-//Added wagesEarnedOnDate function
+// Added wagesEarnedOnDate function
 function wagesEarnedOnDate(obj, dt) {
     let c = Math.floor(hoursWorkedOnDate(obj, dt) * obj.payPerHour);
     return c;
 }
+
 
