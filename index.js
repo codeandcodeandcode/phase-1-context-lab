@@ -58,15 +58,7 @@ function wagesEarnedOnDate(obj, dt) {
     return c;
 }
 
-//Added allWagesFor function
-function allWagesFor(obj) {
-   let dates = obj.timeInEvents;
-   let total = 0;
-   dates.forEach(d=>{
-    total += wagesEarnedOnDate(obj, d.date);
-   })
-   return total;
-}
+
 
 //Added findEmployeeByFirstName function
 function findEmployeeByFirstName(arr, name) {
@@ -81,16 +73,6 @@ function calculatePayroll(arr) {
     arr.forEach(a=>s+=allWagesFor(a))
     return s;
 }
-
-
-
-
-
-
-
-
-
-
 
 /*
  We're giving you this function. Take a look at it, you might see some usage
@@ -113,7 +95,7 @@ const allWagesFor = function () {
     return payable
 }
 
-Added wagesEarnedOnDate function
+//Added wagesEarnedOnDate function
 function wagesEarnedOnDate(obj, dt) {
     let c = Math.floor(hoursWorkedOnDate(obj, dt) * obj.payPerHour);
     return c;
